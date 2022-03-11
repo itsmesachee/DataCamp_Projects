@@ -33,3 +33,23 @@ genre_count = genres_movies.groupby('genre').agg({'id':'count'})
 ## Plot a bar chart of the genre_count
 genre_count.plot(kind='bar')
 plt.show()
+
+============================================================================================
+
+# Excercises - Using outer join to select actors
+
+![image](https://user-images.githubusercontent.com/29009536/157829284-9b463dd4-0de5-4bd5-a2ac-b1734fd7f818.png)
+
+## Merge iron_1_actors to iron_2_actors on id with outer join using suffixes
+iron_1_and_2 = iron_1_actors.merge(iron_2_actors,
+                                     how = 'outer',
+                                     on = 'id',
+                                     suffixes=('_1','_2'))
+
+## Create an index that returns true if name_1 or name_2 are null
+m = ( (iron_1_and_2['name_1'].isnull() ) | 
+     (iron_1_and_2['name_2'].isnull())
+)
+
+## Print the first few rows of iron_1_and_2
+print(iron_1_and_2[m].head())
