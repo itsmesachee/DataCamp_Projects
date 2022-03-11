@@ -16,5 +16,5 @@ movies_and_scifi_only = movies.merge(scifi_only, how='inner', left_on='id', righ
 print(movies_and_scifi_only.head())
 print(movies_and_scifi_only.shape)
 
-===============================================================================================
+============================================================================================
 
