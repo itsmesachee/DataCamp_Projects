@@ -1,4 +1,4 @@
-#Excercises - Other Joins
+# Excercises - Other Joins
 
 ![image](https://user-images.githubusercontent.com/29009536/157827956-45bedc31-e3f7-4aba-9e30-83af46960ad8.png)
 
