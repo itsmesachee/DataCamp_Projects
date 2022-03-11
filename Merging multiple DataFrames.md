@@ -1,6 +1,7 @@
 excercises
 
-[!image](https://user-images.githubusercontent.com/29009536/157795673-c3a3175b-7e13-415b-86b1-fa58b455b175.png)
+![image](https://user-images.githubusercontent.com/29009536/157795673-c3a3175b-7e13-415b-86b1-fa58b455b175.png)
+
 
 # Merge the ridership, cal, and stations tables
 ridership_cal_stations = ridership.merge(cal, on=['year','month','day']) \
@@ -15,6 +16,7 @@ filter_criteria = ((ridership_cal_stations['month'] == 7)
 print(ridership_cal_stations.loc[filter_criteria, 'rides'].sum())
 
 ![image](https://user-images.githubusercontent.com/29009536/157797302-a02e66f7-81e2-4afc-804d-4868d7efe5e4.png)
+
 
 # Merge licenses and zip_demo, on zip; and merge the wards on ward
 licenses_zip_ward = licenses.merge(zip_demo, on='zip') \
