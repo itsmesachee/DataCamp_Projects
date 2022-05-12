@@ -16,3 +16,32 @@ print(number_of_missing_fin)
 
 ![image](https://user-images.githubusercontent.com/29009536/168136159-53379313-9da7-4bb6-8ca6-3abc907caef1.png)
 
+# left join
+# Merge sequels and financials on index id
+sequels_fin = sequels.merge(financials, on='id', how='left')
+
+# Self merge with suffixes as inner join with left on sequel and right on id
+orig_seq = sequels_fin.merge(sequels_fin, how='inner', left_on='sequel', 
+                             right_on='id', right_index=True,
+                             suffixes=('_org','_seq'))
+
+# Add calculation to subtract revenue_org from revenue_seq 
+orig_seq['diff'] = orig_seq['revenue_seq'] - orig_seq['revenue_org']
+
+# Select the title_org, title_seq, and diff 
+titles_diff = orig_seq[['title_org','title_seq','diff']]
+
+# Print the first rows of the sorted titles_diff
+print(titles_diff.sort_values('diff', ascending=False).head())
+
+
+## Filtering joins
+
+## Mutating Join vs Filtering Joins
+'''
+
+Combines data from two tables based on matching observations in both tables
+
+
+Filter observations from table based on whether or not they match an observation in another table.
+'''
