@@ -13,3 +13,6 @@ number_of_missing_fin = movies_financials['budget'].isnull().sum()
 ## Print the number of movies missing financials
 
 print(number_of_missing_fin)
+
+![image](https://user-images.githubusercontent.com/29009536/168136159-53379313-9da7-4bb6-8ca6-3abc907caef1.png)
+
