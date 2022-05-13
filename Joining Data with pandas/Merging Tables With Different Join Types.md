@@ -38,10 +38,9 @@ print(titles_diff.sort_values('diff', ascending=False).head())
 ## Filtering joins
 
 ## Mutating Join vs Filtering Joins
-'''
-
+#MJ
 Combines data from two tables based on matching observations in both tables
-
-
+#FJ
 Filter observations from table based on whether or not they match an observation in another table.
-'''
+
+
