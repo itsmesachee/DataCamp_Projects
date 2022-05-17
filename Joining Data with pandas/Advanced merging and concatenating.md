@@ -51,6 +51,7 @@ avg_inv_by_month = inv_jul_thr_sep.groupby(level=0).agg({'total':'mean'})
 avg_inv_by_month.plot(kind='bar')
 plt.show()
 
+
 ## Using the append method
 
 ![image](https://user-images.githubusercontent.com/29009536/168926995-894387bf-9590-4d42-8e28-c3917676350d.png)
@@ -66,6 +67,7 @@ tracks_sold = tracks_invoices.groupby(['tid','name']).agg({'quantity':'sum'})
 
 ### Sort in decending order by quantity and print the results
 print(tracks_sold.sort_values(ascending = False, by='quantity'))
+
 
 # Verifying integrity
 
