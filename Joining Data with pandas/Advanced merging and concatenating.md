@@ -18,7 +18,7 @@ tracks_from_albums = pd.concat([tracks_master, tracks_ride, tracks_st],
 print(tracks_from_albums) 
 
 ### ->Concatenate tracks_master, tracks_ride, and tracks_st, where the index goes from 0 to n-1.
- \\ Concatenate the tracks so the index goes from 0 to n-1
+ Concatenate the tracks so the index goes from 0 to n-1 </br>
 tracks_from_albums = pd.concat([tracks_master, tracks_ride, tracks_st],
                                ignore_index = True,
                                sort=True)
