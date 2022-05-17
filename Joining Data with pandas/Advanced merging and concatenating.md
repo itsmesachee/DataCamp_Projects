@@ -40,14 +40,14 @@ print(tracks_from_albums)
  
  ## Concatenating with keys
  
- # Concatenate the tables and add keys
+ ### Concatenate the tables and add keys
 inv_jul_thr_sep = pd.concat([inv_jul, inv_aug, inv_sep], 
                             keys=['7Jul', '8Aug', '9Sep'])
 
-# Group the invoices by the index keys and find avg of the total column
+### Group the invoices by the index keys and find avg of the total column
 avg_inv_by_month = inv_jul_thr_sep.groupby(level=0).agg({'total':'mean'})
 
-# Bar plot of avg_inv_by_month
+### Bar plot of avg_inv_by_month
 avg_inv_by_month.plot(kind='bar')
 plt.show()
 
@@ -55,16 +55,16 @@ plt.show()
 
 ![image](https://user-images.githubusercontent.com/29009536/168926995-894387bf-9590-4d42-8e28-c3917676350d.png)
 
-# Use the .append() method to combine the tracks tables
+### Use the .append() method to combine the tracks tables
 metallica_tracks = tracks_ride.append([tracks_master, tracks_st], sort=False)
 
-# Merge metallica_tracks and invoice_items
+### Merge metallica_tracks and invoice_items
 tracks_invoices = metallica_tracks.merge(invoice_items, on='tid')
 
-# For each tid and name sum the quantity sold
+### For each tid and name sum the quantity sold
 tracks_sold = tracks_invoices.groupby(['tid','name']).agg({'quantity':'sum'})
 
-# Sort in decending order by quantity and print the results
+### Sort in decending order by quantity and print the results
 print(tracks_sold.sort_values(ascending = False, by='quantity'))
 
 
